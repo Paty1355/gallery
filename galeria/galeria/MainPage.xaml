@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="galeria.MainPage">
+
+    <Grid x:Name="bg" BackgroundColor="#00796B">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.ColumnSpan="3" Style="{StaticResource naglowek}">Galeria</Label>
+        <Image Aspect="AspectFill" x:Name="img" Source="kot1.jpg" Grid.Row="1" Grid.ColumnSpan="3"/>
+
+        <Button Grid.Row="2" Grid.Column="0" x:Name="prev" Text="PREV" Clicked="poprzedni" Style="{StaticResource button}"/>
+        <Button Grid.Row="2" Grid.Column="2" x:Name="next" Text="NEXT" Clicked="nastepny" Style="{StaticResource button}"/>
+
+        <Label Grid.Row="3" Grid.ColumnSpan="2">Który obraz wyświetlić ?</Label>
+        <Entry Grid.Row="3" Grid.Column="2" x:Name="ktore" MaxLength="1" TextChanged="which_picture" Keyboard="Numeric"/>
+
+        <Label Grid.Row="4" Grid.Column="0">Tło niebieskie ?</Label>
+        <Switch x:Name="zmiana" Grid.Row="4" Grid.Column="2" Toggled="switch_background"/>
+
+        <Label Grid.ColumnSpan="3" Style="{StaticResource autor}" Grid.Row="5">Autor : Patrycja</Label>
+
+    </Grid>
+
+</ContentPage>
